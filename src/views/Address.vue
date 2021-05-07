@@ -1,8 +1,15 @@
 <template>
   <div class="address">
     <div class="main-container">
-      <div class="menu">
+      <!-- menu -->
+      <div class="menu-container">
         <Menu/>
+      </div>
+      <!-- title -->
+      <h2 class="mt-5">結帳</h2>
+      <!-- progress -->
+      <div class="progress-container mt-5">
+        <Progress/>
       </div>
     </div>
   </div>
@@ -10,7 +17,7 @@
 
 <script>
 import Menu from './../components/Menu.vue'
-// import Progress from './../components/Progress.vue'
+import Progress from './../components/Progress.vue'
 // import Cart from './../components/Cart.vue'
 // import Button from './../components/Button.vue'
 // import Footer from './../components/Footer.vue'
@@ -18,7 +25,7 @@ import Menu from './../components/Menu.vue'
 export default {
   components: {
     Menu,
-    // Progress,
+    Progress,
     // Cart,
     // Button,
     // Footer
