@@ -5,14 +5,14 @@
       <div class="progress-item-number">
         1
       </div>
-      <p>寄送地址</p>
+      <p class="text-nowrap">寄送地址</p>
     </div>
     <!-- progress-address complete -->
     <div v-else class="progress-item progress-address d-flex">
       <div class="progress-item-number number-complete">
         &#10003;
       </div>
-      <p>寄送地址</p>
+      <p class="text-nowrap">寄送地址</p>
     </div>
     <!-- line 1 -->
     <div class="progress-line"></div>
@@ -21,21 +21,21 @@
       <div class="progress-item-number">
         2
       </div>
-      <p>運送方式</p>
+      <p class="text-nowrap">運送方式</p>
     </div>
     <!-- progress-shipping muted -->
     <div v-if="stage === 'address'" class="progress-item progress-shipping d-flex">
       <div class="progress-item-number number-muted">
         2
       </div>
-      <p class="muted">運送方式</p>
+      <p class="muted text-nowrap">運送方式</p>
     </div>
     <!-- progress-shipping complete -->
     <div v-if="stage === 'checkout'" class="progress-item progress-shipping d-flex">
       <div class="progress-item-number number-complete">
         &#10003;
       </div>
-      <p>運送方式</p>
+      <p class="text-nowrap">運送方式</p>
     </div>
     <!-- line 2 -->
     <div v-if="stage === 'checkout'" class="progress-line"></div>
@@ -46,14 +46,14 @@
       <div class="progress-item-number">
         3
       </div>
-      <p>付款資訊</p>
+      <p class="text-nowrap">付款資訊</p>
     </div>
     <!-- progress-checkout muted -->
     <div v-else class="progress-item progress-checkout d-flex">
       <div class="progress-item-number number-muted">
         3
       </div>
-      <p class="muted">付款資訊</p>
+      <p class="muted text-nowrap">付款資訊</p>
     </div>
   </div>
 </template>

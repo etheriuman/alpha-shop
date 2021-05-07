@@ -9,14 +9,21 @@ ul,li {
   padding: 0;
 }
 
-
+/* bootstrap customize */
+.form-control {
+  border: 1px solid #000000;
+}
 
 /* 共用 */
 .bold {
   font-weight: 400;
 }
+.text-small {
+  font-size: 12px;
+}
+
 .extra-bold {
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .main-container {
