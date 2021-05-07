@@ -53,7 +53,7 @@
             <div class="form-row d-flex justify-content-between flex-nowrap">
               <!-- city -->
               <div class="input-city form-group mb-3">
-                <label for="city">城市</label>
+                <label for="city">縣市</label>
                 <select id="city" class="form-control custom-select">
                   <option disabled selected>請選擇縣市</option>
                   <option value="taipei">台北</option>
@@ -62,13 +62,13 @@
               </div>
               <!-- address -->
               <div class="input-address mb-3">
-                <label for="address">姓名</label>
+                <label for="address">地址</label>
                 <input type="text" class="form-control" id="address" placeholder="請輸入地址" required>
               </div>
             </div>
           </form>
           <!-- sep line -->
-          <div class="sep-line w-100"></div>
+          <div class="sep-line w-100 mb-3"></div>
           <!-- button -->
           <div class="button-wrapper">
             <Button/>
