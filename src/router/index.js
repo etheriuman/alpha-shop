@@ -7,26 +7,26 @@ Vue.use(VueRouter)
 const routes = [
   // root
   {
-    path: '/',
     name: 'root',
+    path: '/',
     redirect: '/address'
   },
   // address
   {
-    path: '/address',
     name: 'address',
+    path: '/address',
     component: Address
   },
   // shipping
   {
-    path: '/shipping',
     name: 'shipping',
+    path: '/shipping',
     component: () => import('./../views/Shipping.vue')
   },
   // checkout
   {
-    path: '/checkout',
     name: 'checkout',
+    path: '/checkout',
     component: () => import('./../views/Checkout.vue')
   },
   // not found
@@ -36,3 +36,9 @@ const routes = [
     component: () => import('./../views/NotFound.vue')
   }
 ]
+
+const router = new VueRouter({
+  routes
+})
+
+export default router

@@ -1,1 +1,23 @@
 /* ----- standard ----- */
+p,a,span {
+  font-size: 16px;
+}
+
+ul,li {
+  list-style-type: none;
+  padding: 0;
+}
+
+
+
+/* 共用 */
+.bold {
+  font-weight: 400;
+}
+.extra-bold {
+  font-weight: 600;
+}
+
+.main-container {
+  padding: 0 165px;
+}
