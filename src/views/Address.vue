@@ -76,7 +76,7 @@
         </div>
         <!-- content right -->
         <div class="content-right">
-          <!-- cart -->
+          <Cart/>
         </div>
       </div>
     </div>
@@ -86,7 +86,7 @@
 <script>
 import Menu from './../components/Menu.vue'
 import Progress from './../components/Progress.vue'
-// import Cart from './../components/Cart.vue'
+import Cart from './../components/Cart.vue'
 import Button from './../components/Button.vue'
 // import Footer from './../components/Footer.vue'
 
@@ -94,14 +94,14 @@ export default {
   components: {
     Menu,
     Progress,
-    // Cart,
+    Cart,
     Button,
     // Footer
   }
 }
 </script>
 
-<style>
+<style scoped>
 /* content-left */
 .content-left {
   width: 540px;
@@ -139,7 +139,7 @@ label {
 }
 /* sep line */
 .sep-line {
-  background: #808080;
+  background: #e6e6eb;
   height: 1px;
 }
 </style>

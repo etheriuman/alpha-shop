@@ -27,9 +27,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .btn-wrapper {
   position: relative;
+  height: 72px;
 }
 .btn {
   position: absolute;

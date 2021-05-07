@@ -29,7 +29,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .wrap {
   position: relative;
   width: 100%;
