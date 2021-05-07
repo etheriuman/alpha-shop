@@ -68,7 +68,7 @@
             </div>
           </form>
           <!-- sep line -->
-          <div class="sep-line w-100 mb-3"></div>
+          <div class="divider w-100 mb-3"></div>
           <!-- button -->
           <div class="button-wrapper">
             <Button/>
@@ -117,6 +117,9 @@ export default {
   width: 440px;
 }
 /* form */
+form {
+  min-height: 300px;
+}
 label {
   font-size: 12px;
   color: #808080;
@@ -144,7 +147,7 @@ label {
   width: 350px;
 }
 /* sep line */
-.sep-line {
+.divider {
   background: #e6e6eb;
   height: 1px;
 }

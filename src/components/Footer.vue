@@ -10,7 +10,7 @@
         <li>運送說明</li>
         <li>退換貨相關</li>
         <li>付款相關</li>
-        <li>F&Q</li>
+        <li>FAQ</li>
       </ul>
     </div>
     <div class="about">

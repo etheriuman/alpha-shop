@@ -32,7 +32,9 @@ export default new Vuex.Store({
   },
   // use state
   mutations: {
-
+    changeRemarkOption(state, option) {
+      state.remark = option
+    }
   },
   actions: {
 
