@@ -16,7 +16,8 @@
     <!-- remark -->
     <div class="remark w-100 d-flex justify-content-between mb-3">
       <p>運費</p>
-      <p class="bold">{{ remark }}</p>
+      <p v-if="remark === 0">免費</p>
+      <p v-else class="bold">&#3647; {{ remark }}</p>
     </div>
     <!-- divider -->
     <div class="divider w-100 mb-3"></div>

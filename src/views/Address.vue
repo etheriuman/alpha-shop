@@ -80,6 +80,8 @@
         </div>
       </div>
     </div>
+    <!-- footer -->
+    <Footer/>
   </div>
 </template>
 
@@ -88,7 +90,7 @@ import Menu from './../components/Menu.vue'
 import Progress from './../components/Progress.vue'
 import Cart from './../components/Cart.vue'
 import Button from './../components/Button.vue'
-// import Footer from './../components/Footer.vue'
+import Footer from './../components/Footer.vue'
 
 export default {
   components: {
@@ -96,12 +98,16 @@ export default {
     Progress,
     Cart,
     Button,
-    // Footer
+    Footer
   }
 }
 </script>
 
 <style scoped>
+/* main-container */
+.main-container {
+  margin-bottom: 124px
+}
 /* content-left */
 .content-left {
   width: 540px;
