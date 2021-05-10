@@ -28,7 +28,7 @@
             @click.stop="switchToStandard"
             >
               <div class="option-left form-check d-flex align-items-center">
-                <input class="form-check-input" type="radio" name="gridRadios" id="standard" value="option1" checked>
+                <input class="form-check-input" type="radio" name="gridRadios" id="standard" ref="standard" value="option1">
                 <div class="form-check-label">
                   <p>標準運送</p>
                   <p>約 3~7 個工作天</p>
@@ -46,7 +46,7 @@
             @click.stop="switchToDHL"
             >
               <div class="option-left form-check d-flex align-items-center">
-                <input class="form-check-input" type="radio" name="gridRadios" id="dhl" value="option1">
+                <input class="form-check-input" type="radio" name="gridRadios" id="dhl" ref="dhl" value="option1">
                 <div class="form-check-label">
                   <p>DHL 貨運</p>
                   <p>約 3~7 個工作天</p>
@@ -81,6 +81,7 @@ import Progress from './../components/Progress.vue'
 import Cart from './../components/Cart.vue'
 import Button from './../components/Button.vue'
 import Footer from './../components/Footer.vue'
+import { mapState } from 'vuex'
 
 export default {
   data() {
@@ -95,16 +96,31 @@ export default {
     Button,
     Footer
   },
+  computed: {
+    ...mapState(['shippingFee'])
+  },
   methods: {
     switchToStandard() {
       this.option = 'standard'
-      this.$store.commit('changeRemarkOption', 0)
+      this.$store.commit('setShippingFee', 0)
     },
     switchToDHL() {
       this.option = 'dhl'
-      this.$store.commit('changeRemarkOption', 500)
+      this.$store.commit('setShippingFee', 500)
     }
-  }
+  },
+  mounted() {
+    this.$store.commit('setStage', this.$route.name)
+    if (this.shippingFee === 0) {
+      this.option = 'standard'
+      this.$refs.standard.checked = true
+      return
+    }
+    if (this.shippingFee === 500) {
+      this.option = 'dhl'
+      this.$refs.dhl.checked = true
+    }
+  },
 }
 </script>
 

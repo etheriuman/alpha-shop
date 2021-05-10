@@ -7,17 +7,17 @@
     <div class="product-wrapper">
       <ProductCard
       v-for="product in cart"
-      :key="product.productInfo.name"
+      :key="product.productInfo.id"
       :product="product"
       />
     </div>
     <!-- divider -->
     <div class="divider w-100 mb-3"></div>
-    <!-- remark -->
-    <div class="remark w-100 d-flex justify-content-between mb-3">
+    <!-- shippingFee -->
+    <div class="shippingFee w-100 d-flex justify-content-between mb-3">
       <p>運費</p>
-      <p v-if="remark === 0">免費</p>
-      <p v-else class="bold">&#3647; {{ remark }}</p>
+      <p v-if="shippingFee === 0">免費</p>
+      <p v-else class="bold">&#3647; {{ shippingFee }}</p>
     </div>
     <!-- divider -->
     <div class="divider w-100 mb-3"></div>
@@ -44,7 +44,7 @@ export default {
     ProductCard
   },
   computed: {
-    ...mapState(['cart', 'remark'])
+    ...mapState(['cart', 'shippingFee'])
   },
   methods: {
     getCartTotal(cart) {
@@ -54,21 +54,24 @@ export default {
       })
       return sum
     },
-    getAllTotal(cart, remark) {
-      return this.getCartTotal(cart) + remark
+    getAllTotal(cart, shippingFee) {
+      return this.getCartTotal(cart) + shippingFee
     }
   },
   mixins: [priceCommaSetter],
   mounted() {
-    this.total = this.getAllTotal(this.cart, this.remark)
+    this.total = this.getAllTotal(this.cart, this.shippingFee)
   },
   watch: {
     cart(data) {
-      this.total = this.getAllTotal(data, this.remark)
+      this.total = this.getAllTotal(data, this.shippingFee)
     },
-    remark(data) {
+    shippingFee(data) {
       this.total = this.getAllTotal(this.cart, data)
     }
+  },
+  updated() {
+    this.$store.commit('setTotalPrice', this.total)
   }
 }
 </script>

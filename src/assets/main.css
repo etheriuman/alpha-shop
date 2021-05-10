@@ -13,6 +13,9 @@ ul,li {
 .form-control {
   border: 1px solid #000000;
 }
+.form-control:read-only {
+  background-color: #ffffff;
+}
 .form-check-input:checked {
   background-color: #ffffff;
   border-color: #000000;

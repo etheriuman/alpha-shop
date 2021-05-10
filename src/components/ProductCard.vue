@@ -6,10 +6,28 @@
       </div>
       <div class="count d-flex flex-column">
         <p class="mb-3">{{ product.productInfo.name }}</p>
-        <div class="amount d-flex justify-content-between">
-          <p class="count-symbol">&#8722;</p>
+        <div v-if="product.amount" class="amount d-flex justify-content-between">
+          <!-- minus 1 -->
+          <p @click.prevent.stop="minusOne(product.productInfo.id)" class="count-symbol">&#8722;</p>
           <p>{{ product.amount }}</p>
-          <p class="count-symbol">&#43;</p>
+          <!-- plus 1 -->
+          <p @click.prevent.stop="plusOne(product.productInfo.id)" class="count-symbol">&#43;</p>
+        </div>
+        <div v-else class="remove-check d-flex">
+          <button
+          type="button"
+          class="btn btn-sm btn-outline-dark noRemove"
+          @click.prevent.stop="plusOne(product.productInfo.id)"
+          >
+          我後悔了
+          </button>
+          <button
+          type="button"
+          class="btn btn-sm btn-outline-danger remove"
+          @click.prevent.stop="removeProduct(product.productInfo.id)"
+          >
+          刪除商品
+          </button>
         </div>
       </div>
     </div>
@@ -29,7 +47,26 @@ export default {
       require: true
     }
   },
-  mixins: [priceCommaSetter]
+  mixins: [priceCommaSetter],
+  methods: {
+    minusOne(id) {
+      const payLoad = {
+        productId: id,
+        amountChange: -1
+      }
+      this.$store.commit('setCart', payLoad)
+    },
+    plusOne(id) {
+      const payLoad = {
+        productId: id,
+        amountChange: 1
+      }
+      this.$store.commit('setCart', payLoad)
+    },
+    removeProduct(id) {
+      this.$store.commit('removeProduct', id)
+    }
+  }
 }
 </script>
 
@@ -52,6 +89,9 @@ export default {
   background: #f0f0f5;
   border-radius: 13px;
   text-align: center;
-  line-height: 26px;
+  cursor: pointer;
+}
+.noRemove {
+  margin-right: 10px;
 }
 </style>
